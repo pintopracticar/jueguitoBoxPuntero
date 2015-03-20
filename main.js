@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    var punteroGrafico = document.getElementById("punterografico"); //Puntero div que se movera con los controles
+    var punteroGrafico = document.getElementById("punterografico"), //Puntero div que se movera con los controles
+    i; 
     
     // Hovers especificos para cada posición
     $(".arriba").hover(function(){        
@@ -47,7 +48,7 @@ $(document).ready(function(){
     });
     $(".abajo").mousedown(function(){
         intervalo = setInterval(function(){
-            if($(punteroGrafico).css("top") !== "400px"){
+            if($(punteroGrafico).css("top") !== "398px"){
                 temp = $(punteroGrafico).css("top");
                 temp = temp.replace("px","");
                 temp = parseInt(temp);
@@ -93,6 +94,41 @@ $(document).ready(function(){
     }).mouseleave(function(){
         clearInterval(intervalo);
     });
+    
+    // Timer informativo
+    
+    function sumaSegundo(){
+        segundero = $('.timerseg').text();
+        segundero = parseInt(segundero);
+        segundero++;
+        if(segundero < 60){ // Mientras se puedan sumar segundos, se suman
+            $('.timerseg').text(segundero);
+        } else { // Caso contrario agregamos un minuto
+            segundero = 0;
+            $('.timerseg').text(segundero);
+            sumaMinuto();
+        }
+    }
+    function sumaMinuto(){
+        minutero = $('.timermin').text();
+        minutero = parseInt(minutero);
+        minutero++;
+        $('.timermin').text(minutero);
+    }
+    // Ejecucion del timer
+    setInterval(sumaSegundo, 1000);
+    
+    // Generacion de frutitas en el campo    
+    for(i=0;i<10;i++){
+        var randTop = Math.floor((Math.random() * 328) - 60), //Distancia top relative en el css, numero al azar
+        randLeft = Math.floor((Math.random() * 790) + 90); // Distancia del top left relative en el css, al azar tambien
+        randTop = randTop.toString();
+        randTop = randTop+"px";
+        randLeft = randLeft.toString();
+        randLeft = randLeft+"px";
+        $(".frutita"+i).css("top",randTop);
+        $(".frutita"+i).css("left",randLeft);
+    }
     
     
 });
