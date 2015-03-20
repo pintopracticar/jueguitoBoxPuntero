@@ -1,0 +1,48 @@
+*{
+    padding:0;
+    margin:0;
+    border:0;
+    font-family: 'Trebuchet MS', Arial, Verdana;
+}
+body{
+    width: 100%;
+}
+#controladores{
+    width:261px;
+}
+.control, .controlvacio{
+    width: 85px;
+    height: 85px;
+    border: 1px solid #ececec;
+    float: left;
+}
+.control{
+    background-image:url('ArrowSpriteSheet.png');
+    cursor: pointer;
+}
+.arriba{
+    background-position: 0px -255px;
+}
+.abajo{
+    background-position: 0px -170px;
+}
+.derecha{
+    background-position: 0 0;
+}
+.izquierda{
+    background-position: 0px -85px;
+}
+#campo{
+    width:900px;
+    height:450px;
+    border:2px solid #000;
+}
+.clear{
+    clear:both;
+}
+#punterografico{
+    width:50px;
+    height:50px;
+    border: 1px solid #050505;
+    position:relative; top:10px; left:10px;
+}
