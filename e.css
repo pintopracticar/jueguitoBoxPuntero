@@ -9,6 +9,14 @@ body{
 }
 #controladores{
     width:261px;
+    float:left;
+}
+#informacion{
+    float:left;
+    width:200px;
+    height:100px;
+    padding:8px;
+    border:1px solid #f0f0f0;
 }
 .control, .controlvacio{
     width: 85px;
@@ -45,4 +53,10 @@ body{
     height:50px;
     border: 1px solid #050505;
     position:relative; top:10px; left:10px;
+}
+.frutita{
+    width:15px;
+    height:15px;
+    position:relative;
+    background-color:green;
 }
